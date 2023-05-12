@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const userRouter = require('./routes/user-routes');
 dotenv.config();
+//midddleware
+app.use(express.json());
 
-
-///midddleware
 app.use("/user", userRouter);
 
 mongoose.connect("mongodb+srv://piyushbachchan2:G67ovdizjbLTClsU@movie-system.xzdybs6.mongodb.net/Movies?retryWrites=true&w=majority")
