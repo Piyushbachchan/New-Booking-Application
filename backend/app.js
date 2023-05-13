@@ -4,11 +4,13 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const userRouter = require('./routes/user-routes');
+const adminRouter = require('./routes/admin-routes');
 dotenv.config();
 //midddleware
 app.use(express.json());
 
 app.use("/user", userRouter);
+app.use("/admin", adminRouter);
 
 mongoose.connect("mongodb+srv://piyushbachchan2:G67ovdizjbLTClsU@movie-system.xzdybs6.mongodb.net/Movies?retryWrites=true&w=majority")
 
